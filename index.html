@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Emmanuel Managa</title>
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        const savedTheme = localStorage.getItem('portfolioTheme') || 'light';
+        document.documentElement.setAttribute('data-bs-theme', savedTheme);
+    </script>
+</head>
+
+<body>
+    <div class="container mt-4 fixed-top d-flex justify-content-center align-items-center gap-3 z-3">
+
+        <nav class="navbar navbar-expand-lg custom-pill-nav px-4 py-2">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="logo.svg" alt="Emmanuel Logo" class="custom-logo-img">
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-3 fw-medium">
+                    <li class="nav-item"><a class="nav-link active d-flex align-items-center gap-2" href="index.html"><i
+                                class="bi bi-house-door"></i> About</a></li>
+                    <li class="nav-item"><a class="nav-link d-flex align-items-center gap-2" href="projects.html"><i
+                                class="bi bi-code-slash"></i> Projects</a></li>
+                    <li class="nav-item"><a class="nav-link d-flex align-items-center gap-2" href="#contact"><i
+                                class="bi bi-telephone"></i> Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <button id="theme-toggle" class="btn theme-toggle-btn d-flex justify-content-center align-items-center"
+            aria-label="Toggle Theme">
+            <i class="bi bi-moon-stars-fill" id="theme-icon"></i>
+        </button>
+
+    </div>
+
+    <section id="about" class="container min-vh-100 d-flex align-items-center">
+        <div class="row w-100 align-items-center g-5 perspective-wrapper mt-4 pt-5">
+
+            <div class="col-lg-7">
+                <div class="hero-glass-card p-5" id="parallax-card">
+                    <span class="text-success fw-bold tracking-wide small text-uppercase mb-3 d-block">
+                        <i class="bi bi-circle-fill text-success small me-2"></i>About Me
+                    </span>
+
+                    <h1 class="display-3 fw-bold mt-2 mb-4 text-dark-custom">
+                        Emmanuel Managa — <br>
+                        <span id="typewriter" class="text-gradient"></span><span class="cursor">|</span>
+                    </h1>
+
+                    <p class="lead text-muted mb-4 pe-lg-4">
+                        I am an Information Technology student at PUP Sto. Tomas Campus with a relentless drive to
+                        learn,
+                        build, and expand. While my technical foundation spans web development, networking, and
+                        databases,
+                        my true strength is my curiosity. I am always pushing for growth and discovering new ways to
+                        bring
+                        ideas to life.
+                    </p>
+
+                    <div class="d-flex flex-wrap gap-3 mb-5">
+                        <a href="projects.html" class="btn btn-success px-4 py-2 rounded-pill shadow-sm">
+                            <i class="bi bi-code-slash me-2"></i>View Projects
+                        </a>
+                        <a href="experience.html" class="btn btn-outline-dark px-4 py-2 rounded-pill shadow-sm">
+                            <i class="bi bi-briefcase-fill me-2"></i>View Experience
+                        </a>
+                    </div>
+
+                    <div class="mt-2 d-flex justify-content-between align-items-end flex-wrap gap-3 position-relative"
+                        style="z-index: 20;">
+
+                        <div>
+                            <span class="text-success fw-bold tracking-wide small text-uppercase d-block mb-1">Contact
+                                Number</span>
+                            <a href="#"
+                                class="h6 fw-bold text-dark-custom text-decoration-underline mb-0 d-inline-block"
+                                style="text-underline-offset: 6px;">
+                                Upon Request
+                            </a>
+                        </div>
+
+                        <div class="d-flex gap-4 pb-1">
+                            <a href="https://github.com/emmanmanaga" target="_blank" class="hero-social-icon"
+                                aria-label="GitHub"><i class="bi bi-github"></i></a>
+                            <a href="https://www.instagram.com/em.managa/" target="_blank" class="hero-social-icon"
+                                aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="mailto:emmanmng13@gmail.com" class="hero-social-icon" aria-label="Email"><i
+                                    class="bi bi-envelope-fill"></i></a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-5 text-center position-relative d-flex justify-content-center align-items-center mt-3">
+
+                <div class="floating-badge badge-1"><i class="bi bi-globe me-1"></i> Web Development</div>
+                <div class="floating-badge badge-2"><i class="bi bi-router me-1"></i> Networking</div>
+                <div class="floating-badge badge-3"><i class="bi bi-database me-1"></i> Database</div>
+
+                <div class="floating-wrapper mx-auto w-100" style="max-width: 400px;">
+
+                    <div id="profileBrandCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false"
+                        data-bs-interval="4000">
+                        <div class="carousel-inner">
+
+                            <div class="carousel-item active">
+                                <img src="hero-pfp.png" alt="Emmanuel Profile" class="img-fluid profile-carousel-img">
+                            </div>
+
+                            <div class="carousel-item">
+                                <img src="logo.svg" alt="Emmanuel Logo" class="img-fluid profile-carousel-img p-4">
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="container py-5 mt-3">
+
+        <div class="text-center mb-5">
+            <span class="text-success fw-bold tracking-wide small text-uppercase">
+                <i class="bi bi-circle-fill text-success small me-2"></i>What I Do</span>
+            <h2 class="display-4 fw-bold text-dark-custom mt-2">Background</h2>
+            <p class="lead text-muted mx-auto" style="max-width: 600px;">
+                Three perspectives on what I've studied, what I know, and what keeps me hacking on side projects late at
+                night.
+            </p>
+        </div>
+
+        <ul class="nav nav-pills justify-content-center gap-3 mb-5" id="about-pills" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active neo-pill" id="pills-education-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-education" type="button" role="tab" aria-selected="true">Education</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link neo-pill" id="pills-tech-tab" data-bs-toggle="pill" data-bs-target="#pills-tech"
+                    type="button" role="tab" aria-selected="false">Tech stack</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link neo-pill" id="pills-interests-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-interests" type="button" role="tab" aria-selected="false">Interests</button>
+            </li>
+        </ul>
+
+        <div class="tab-content neo-content-card p-4 p-md-5" id="pills-tabContent">
+
+            <div class="tab-pane fade show active" id="pills-education" role="tabpanel" tabindex="0">
+                <h3 class="fw-bold text-success mb-1">Education</h3>
+                <p class="text-muted mb-4">My academic journey and foundational studies.</p>
+
+                <div class="row g-4">
+
+                    <div class="col-xl-4 col-md-6">
+                        <div class="neo-edu-card h-100">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <small class="text-muted fw-bold tracking-wide" style="font-size: 0.7rem;">
+                                    <i class="bi bi-calendar3 me-2"></i>2024 — PRESENT
+                                </small>
+                                <span
+                                    class="badge rounded-pill neo-active-badge text-success border border-success fw-bold d-flex align-items-center gap-2">
+                                    <span class="pulse-dot"></span> Active
+                                </span>
+                            </div>
+
+                            <h4 class="fw-bold text-dark-custom mb-1">College
+                                University</h4>
+                            <p class="text-success fw-medium small mb-2">Bachelor of Science in Information Technology
+                            </p>
+                            <p class="text-muted small mb-4"><i class="bi bi-geo-alt-fill me-1"></i> Polytechnic
+                                University of the Philippines</p>
+
+                            <div class="d-flex flex-column gap-2">
+                                <div class="neo-list-item"><i
+                                        class="bi bi-check2-circle me-2 text-success"></i>Hackathon
+                                    Participant (2025)</div>
+                                <div class="neo-list-item"><i class="bi bi-check2-circle me-2 text-success"></i>PicoCTF
+                                    Participant (2025)
+                                </div>
+                                <div class="neo-list-item"><i
+                                        class="bi bi-check2-circle me-2 text-success"></i>President Lister's</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6">
+                        <div class="neo-edu-card h-100">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <small class="text-muted fw-bold tracking-wide" style="font-size: 0.7rem;">
+                                    <i class="bi bi-calendar3 me-2"></i>2022 — 2024
+                                </small>
+                            </div>
+
+                            <h4 class="fw-bold text-dark-custom mb-1">Senior
+                                High School</h4>
+                            <p class="text-success fw-medium small mb-2">STEM Strand</p>
+                            <p class="text-muted small mb-4"><i class="bi bi-geo-alt-fill me-1"></i> Jesus Is Lord
+                                Christian School</p>
+
+                            <div class="d-flex flex-column gap-2">
+                                <div class="neo-list-item"><i class="bi bi-check2-circle me-2 text-success"></i>With
+                                    High Honors</div>
+                                <div class="neo-list-item"><i class="bi bi-check2-circle me-2 text-success"></i>Science
+                                    Club President
+                                </div>
+                                <div class="neo-list-item"><i class="bi bi-check2-circle me-2 text-success"></i>First
+                                    Exposure to ICT</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-md-12">
+                        <div class="neo-edu-card h-100">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <small class="text-muted fw-bold tracking-wide" style="font-size: 0.7rem;">
+                                    <i class="bi bi-calendar3 me-2"></i>2018 — 2022
+                                </small>
+                            </div>
+
+                            <h4 class="fw-bold text-dark-custom mb-1">Junior
+                                High School</h4>
+                            <p class="text-success fw-medium small mb-2">Special Class for Journalism</p>
+                            <p class="text-muted small mb-4"><i class="bi bi-geo-alt-fill me-1"></i> Bernardo Lirio
+                                National High School</p>
+
+                            <div class="d-flex flex-column gap-2">
+                                <div class="neo-list-item"><i class="bi bi-check2-circle me-2 text-success"></i>With
+                                    Honors</div>
+                                <div class="neo-list-item"><i class="bi bi-check2-circle me-2 text-success"></i>Sports
+                                    Writing RSPC Participant
+                                </div>
+                                <div class="neo-list-item"><i class="bi bi-check2-circle me-2 text-success"></i>ASEAN
+                                    Quiz Bee Division 1st Placer</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="pills-tech" role="tabpanel" tabindex="0">
+                <h3 class="fw-bold text-success mb-1">Tech Stack</h3>
+                <p class="text-muted mb-4">The tools, languages, and frameworks I use to build.</p>
+
+                <div class="row g-4">
+
+                    <div class="col-md-6">
+                        <div class="neo-edu-card h-100">
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <div class="tech-icon-wrapper text-success">
+                                    <i class="bi bi-code-slash fs-5"></i>
+                                </div>
+                                <h5 class="fw-bold text-dark-custom mb-0 tracking-wide text-uppercase"
+                                    style="font-size: 0.85rem;">Frontend Development</h5>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2">
+                                <div class="neo-tech-pill"><i class="bi bi-filetype-html text-danger fs-6"></i> HTML
+                                </div>
+                                <div class="neo-tech-pill"><i class="bi bi-filetype-css text-primary fs-6"></i> CSS
+                                </div>
+                                <div class="neo-tech-pill"><i class="bi bi-filetype-js text-warning fs-6"></i>
+                                    JavaScript</div>
+                                <div class="neo-tech-pill"><i class="bi bi-bootstrap text-purple fs-6"
+                                        style="color: #7952b3;"></i> Bootstrap</div>
+                                <div class="neo-tech-pill"><i class="bi bi-window text-secondary fs-6"></i> Tkinter
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="neo-edu-card h-100">
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <div class="tech-icon-wrapper text-success">
+                                    <i class="bi bi-cpu fs-5"></i>
+                                </div>
+                                <h5 class="fw-bold text-dark-custom mb-0 tracking-wide text-uppercase"
+                                    style="font-size: 0.85rem;">Backend Development</h5>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2">
+                                <div class="neo-tech-pill"><i class="bi bi-filetype-php text-primary fs-6"
+                                        style="color: #777bb4 !important;"></i> PHP</div>
+                                <div class="neo-tech-pill"><i class="bi bi-filetype-py text-primary fs-6"></i> Python
+                                </div>
+                                <div class="neo-tech-pill"><i class="bi bi-droplet-half text-dark-custom fs-6"></i>
+                                    Flask</div>
+                                <div class="neo-tech-pill"><i class="bi bi-filetype-cs text-purple fs-6"
+                                        style="color: #68217a;"></i> C#</div>
+                                <div class="neo-tech-pill"><i class="bi bi-controller text-success fs-6"></i> Pygame
+                                </div>
+                                <div class="neo-tech-pill"><i class="bi bi-cup-hot-fill fs-6"
+                                        style="color: #f89820;"></i> Java</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="neo-edu-card h-100">
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <div class="tech-icon-wrapper text-success">
+                                    <i class="bi bi-hdd-network fs-5"></i>
+                                </div>
+                                <h5 class="fw-bold text-dark-custom mb-0 tracking-wide text-uppercase"
+                                    style="font-size: 0.85rem;">Database & Networking</h5>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2">
+                                <div class="neo-tech-pill"><i class="bi bi-database text-info fs-6"></i> MySQL</div>
+                                <div class="neo-tech-pill"><i class="bi bi-database text-primary fs-6"></i> SQLite</div>
+                                <div class="neo-tech-pill"><i class="bi bi-router text-success fs-6"></i> Cisco Packet
+                                    Tracer</div>
+                                <div class="neo-tech-pill"><i class="bi bi-activity text-primary fs-6"></i> Wireshark
+                                </div>
+                                <div class="neo-tech-pill"><i class="bi bi-ubuntu fs-6" style="color: #E95420;"></i>
+                                    Ubuntu</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="neo-edu-card h-100">
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <div class="tech-icon-wrapper text-success">
+                                    <i class="bi bi-tools fs-5"></i>
+                                </div>
+                                <h5 class="fw-bold text-dark-custom mb-0 tracking-wide text-uppercase"
+                                    style="font-size: 0.85rem;">Tools & Design</h5>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2">
+                                <div class="neo-tech-pill"><i class="bi bi-git text-danger fs-6"></i> Git</div>
+                                <div class="neo-tech-pill"><i class="bi bi-github text-dark-custom fs-6"></i> Github
+                                </div>
+                                <div class="neo-tech-pill"><i class="bi bi-palette text-danger fs-6"></i> Figma</div>
+                                <div class="neo-tech-pill"><i class="bi bi-braces text-purple fs-6"
+                                        style="color: #5c2d91;"></i> Visual Studio</div>
+                                <div class="neo-tech-pill"><i class="bi bi-badge-3d-fill fs-6"
+                                        style="color: #ea7600;"></i> Blender</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="pills-interests" role="tabpanel" tabindex="0">
+                <h3 class="fw-bold text-success mb-1">Interests</h3>
+                <p class="text-muted mb-4">Where my curiosity leads me outside of class.</p>
+
+                <div class="row g-4 mt-2">
+
+                    <div class="col-md-4">
+                        <div class="neo-interest-card h-100 text-center p-4 p-lg-5">
+                            <div class="neo-icon-stage mx-auto mb-4">
+                                <i class="bi bi-shield-lock-fill text-success fs-1"></i>
+                            </div>
+                            <h5 class="fw-bold text-dark-custom">Cybersecurity & CTFs</h5>
+                            <p class="text-muted small mb-0 mt-3">Diving deep into reverse engineering, analyzing
+                                network protocols, and building custom binary exploitation challenges from scratch.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="neo-interest-card h-100 text-center p-4 p-lg-5">
+                            <div class="neo-icon-stage mx-auto mb-4">
+                                <i class="bi bi-controller text-success fs-1"></i>
+                            </div>
+                            <h5 class="fw-bold text-dark-custom">Game Development</h5>
+                            <p class="text-muted small mb-0 mt-3">Writing core logic for 2D arcade physics in Python and
+                                gamifying complex system algorithms into interactive web experiences.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="neo-interest-card h-100 text-center p-4 p-lg-5">
+                            <div class="neo-icon-stage mx-auto mb-4">
+                                <i class="bi bi-diagram-3-fill text-success fs-1"></i>
+                            </div>
+                            <h5 class="fw-bold text-dark-custom">System Architecture</h5>
+                            <p class="text-muted small mb-0 mt-3">Designing scalable, object-oriented ecosystem projects
+                                like fleet management databases and companion apps.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="container py-4 mt-5 border-top neo-footer">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-4">
+
+            <div class="d-flex align-items-center gap-3 text-center text-md-start">
+                <img src="logo.svg" alt="Logo" class="footer-logo">
+                <div>
+                    <h6 class="mb-0 fw-bold text-dark-custom lh-1" style="font-size: 0.75rem;">Polytechnic University of
+                        the Philippines</h6>
+                    <small class="text-muted tracking-wide" style="font-size: 0.6rem;">STO. TOMAS CAMPUS</small>
+                </div>
+            </div>
+
+            <div class="text-center text-md-end">
+                <small class="text-muted tracking-wide d-block fw-medium mb-2" style="font-size: 0.6rem;">&copy; 2026
+                    EMMANUEL MANAGA</small>
+
+                <div class=" d-flex justify-content-center justify-content-md-end gap-3">
+                    <a href="https://github.com/emmanmanaga" target="_blank" class="text-muted footer-icon"
+                        aria-label="GitHub"><i class="bi bi-github"></i></a>
+                    <a href="https://www.instagram.com/em.managa/" target="_blank" class="text-muted footer-icon"
+                        aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="mailto:emmanmng13@gmail.com" class="text-muted footer-icon" aria-label="Email"><i
+                            class="bi bi-envelope-fill"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const htmlElement = document.documentElement;
+
+        // 1. Sync the icon state immediately when the page loads
+        if (htmlElement.getAttribute('data-bs-theme') === 'dark') {
+            themeIcon.classList.replace('bi-moon-stars-fill', 'bi-sun-fill');
+        }
+
+        // 2. The Click Event
+        toggleBtn.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-bs-theme');
+            let newTheme;
+
+            if (currentTheme === 'dark') {
+                newTheme = 'light';
+                themeIcon.classList.replace('bi-sun-fill', 'bi-moon-stars-fill');
+            } else {
+                newTheme = 'dark';
+                themeIcon.classList.replace('bi-moon-stars-fill', 'bi-sun-fill');
+            }
+
+            // Apply to the page and save to browser memory
+            htmlElement.setAttribute('data-bs-theme', newTheme);
+            localStorage.setItem('portfolioTheme', newTheme);
+        });
+    </script>
+
+    <script>
+        // 1. The Typewriter Effect
+        const roles = ["Web Developer", "Curious Dreamer", "Ad Astra"];
+        let roleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typewriterElement = document.getElementById('typewriter');
+
+        function type() {
+            const currentRole = roles[roleIndex];
+
+            if (isDeleting) {
+                typewriterElement.textContent = currentRole.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typewriterElement.textContent = currentRole.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 40 : 100;
+
+            if (!isDeleting && charIndex === currentRole.length) {
+                typeSpeed = 2000; // Pause when word is complete
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                roleIndex = (roleIndex + 1) % roles.length;
+                typeSpeed = 500; // Pause before typing next word
+            }
+
+            setTimeout(type, typeSpeed);
+        }
+
+        // Start the typing effect after a short delay
+        setTimeout(type, 1000);
+
+        // 2. The Smooth Interactive 3D Card Hover
+        const card = document.getElementById('parallax-card');
+
+        // When the mouse ENTERS the card
+        card.addEventListener("mouseenter", () => {
+            // Add a very quick transition so it doesn't instantly snap to the cursor
+            card.style.transition = 'transform 0.1s ease-out';
+        });
+
+        // When the mouse MOVES inside the card
+        card.addEventListener("mousemove", (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            // Softened the tilt by dividing by 35 instead of 20
+            const rotateX = ((centerY - y) / 35).toFixed(2);
+            const rotateY = ((x - centerX) / 35).toFixed(2);
+
+            // Remove the transition while moving to eliminate jitter
+            card.style.transition = 'none';
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+
+        // When the mouse LEAVES the card
+        card.addEventListener("mouseleave", () => {
+            // Apply a smooth, elastic cubic-bezier transition for the snap-back
+            card.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1)';
+            card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
+        });
+    </script>
+
+</body>
+
+</html>

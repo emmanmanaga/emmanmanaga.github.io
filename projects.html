@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Projects | Emmanuel Managa</title>
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        const savedTheme = localStorage.getItem('portfolioTheme') || 'light';
+        document.documentElement.setAttribute('data-bs-theme', savedTheme);
+    </script>
+</head>
+
+<body>
+    <div class="container mt-4 fixed-top d-flex justify-content-center align-items-center gap-3 z-3">
+
+        <nav class="navbar navbar-expand-lg custom-pill-nav px-4 py-2">
+            <a class="navbar-brand d-flex align-items-center" href="#about">
+                <img src="logo.svg" alt="Emmanuel Logo" class="custom-logo-img">
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-3 fw-medium">
+                    <li class="nav-item"><a class="nav-link d-flex align-items-center gap-2" href="index.html"><i
+                                class="bi bi-house-door"></i> About</a></li>
+                    <li class="nav-item"><a class="nav-link active d-flex align-items-center gap-2"
+                            href="projects.html"><i class="bi bi-code-slash"></i> Projects</a></li>
+                    <li class="nav-item"><a class="nav-link d-flex align-items-center gap-2" href="#contact"><i
+                                class="bi bi-telephone"></i> Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <button id="theme-toggle" class="btn theme-toggle-btn d-flex justify-content-center align-items-center"
+            aria-label="Toggle Theme">
+            <i class="bi bi-moon-stars-fill" id="theme-icon"></i>
+        </button>
+
+    </div>
+
+    <section class="container min-vh-100" style="padding-top: 120px;">
+        <div class="text-center mb-1">
+            <span class="text-success fw-bold tracking-wide small text-uppercase mb-0 d-block">
+                <i class="bi bi-circle-fill text-success small me-2"></i>Selected Works
+            </span>
+
+            <h2 class="display-4 fw-bold text-dark-custom mt-0">Projects</h2>
+
+            <p class="lead text-muted mx-auto" style="max-width: 600px;">
+                A showcase of things I've built and of which I became a part to expand my knowledge.
+            </p>
+        </div>
+
+        <div class="swiper project-swiper mt-1 mb-5 pb-5">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide neo-glass-slide d-flex flex-column">
+                    <div class="slide-visual flex-grow-1">
+                        <img src="Figma.png" alt="Nokia UI/UX Design Preview" class="w-100 h-100 object-fit-cover"
+                            style="border-top-left-radius: 31px; border-top-right-radius: 31px;">
+                    </div>
+                    <div class="slide-content text-center p-4">
+                        <h4 class="fw-bold text-dark-custom mb-2">Figma: Website Design & Prototype</h4>
+                        <p class="text-muted small mb-0">A curated collection of user-centered website interfaces
+                            designed in Figma, transforming abstract ideas into clean, functional, and visually
+                            consistent UI/UX prototypes.</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide neo-glass-slide d-flex flex-column">
+                    <div class="slide-visual flex-grow-1">
+                        <img src="SmartBoundary.png" alt="SmartBoundary Preview" class="w-100 h-100 object-fit-cover"
+                            style="border-top-left-radius: 31px; border-top-right-radius: 31px;">
+                    </div>
+                    <div class="slide-content text-center p-4">
+                        <h4 class="fw-bold text-dark-custom mb-2">SmartBoundary: Fleet Management</h4>
+                        <p class="text-muted small mb-0">A PHP-based remittance and fleet ecosystem featuring
+                            object-oriented driver classes and secure session logging.</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide neo-glass-slide d-flex flex-column">
+                    <div class="slide-visual flex-grow-1">
+                        <img src="SagipQ.png" alt="SagipQ Preview" class="w-100 h-100 object-fit-cover"
+                            style="border-top-left-radius: 31px; border-top-right-radius: 31px;">
+                    </div>
+                    <div class="slide-content text-center p-4">
+                        <h4 class="fw-bold text-dark-custom mb-2">SagipQ: Hackathon Project</h4>
+                        <p class="text-muted small mb-0">An AI-assisted hackathon solution bridging citizens and
+                            authorities through a user-centered platform to efficiently report, monitor, and assist
+                            at-risk community members.</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide neo-glass-slide d-flex flex-column" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#projectModal1">
+                    <div class="slide-visual flex-grow-1">
+                        <img src="CyberSphere.png" alt="CyberSphere Preview" class="w-100 h-100 object-fit-cover"
+                            style="border-top-left-radius: 31px; border-top-right-radius: 31px;">
+                    </div>
+                    <div class="slide-content text-center p-4">
+                        <h4 class="fw-bold text-dark-custom mb-2">CyberSphere: Tech Industry Portal</h4>
+                        <p class="text-muted small mb-0">A comprehensive PHP and MySQL ecosystem centralizing
+                            professional networking, real-time skill validation sandboxes, and a digital marketplace for
+                            the tech industry.</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide neo-glass-slide d-flex flex-column">
+                    <div class="slide-visual flex-grow-1">
+                        <img src="Cathedread.png" alt="Cathedread Preview" class="w-100 h-100 object-fit-cover"
+                            style="border-top-left-radius: 31px; border-top-right-radius: 31px;">
+                    </div>
+                    <div class="slide-content text-center p-4">
+                        <h4 class="fw-bold text-dark-custom mb-2">Cathedread: Pseudo-3D Game</h4>
+                        <p class="text-muted small mb-0">An immersive interactive experience utilizing Pygame to deliver
+                            3D-like raycasted graphics, complete with responsive player inputs, custom physics, and
+                            synchronized audio integration.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="swiper-pagination mt-4"></div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="projectModal1" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content neo-glass-modal border-0" style="border-radius: 32px;">
+                <div class="modal-body p-4 p-md-5 position-relative">
+
+                    <button type="button" class="btn-close position-absolute top-0 end-0 m-4 z-3"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+
+                    <div class="row g-4 h-100">
+                        <div class="col-lg-7 d-flex flex-column">
+                            <div class="flex-grow-1 mb-3" style="min-height: 350px;">
+                                <img src="placeholder.jpg" alt="Project Preview" class="w-100 h-100 object-fit-cover"
+                                    style="border-radius: 24px;">
+                            </div>
+                            <small class="text-muted tracking-wide" style="font-size: 0.75rem;">
+                                Credits: Emmanuel Managa, Team Member 2
+                            </small>
+                        </div>
+
+                        <div class="col-lg-5 d-flex flex-column justify-content-center py-2">
+                            <span class="text-success fw-bold small text-uppercase tracking-wide mb-1">Web
+                                Ecosystem</span>
+                            <h2 class="display-6 fw-bold text-dark-custom mb-1">CyberSphere</h2>
+                            <span class="text-muted fw-medium mb-4 d-block small">Lead Backend Developer</span>
+
+                            <p class="text-muted mb-4 small lh-lg">
+                                A comprehensive PHP and MySQL ecosystem centralizing professional networking, real-time
+                                skill validation sandboxes, and a digital marketplace for the tech industry.
+                            </p>
+
+                            <div class="d-flex align-items-center flex-wrap gap-2 mb-5">
+                                <span class="text-dark-custom fw-bold small me-2">Languages:</span>
+                                <div class="neo-tech-pill py-1 px-3" style="font-size: 0.75rem;">
+                                    <i class="bi bi-filetype-php text-primary"></i> PHP
+                                </div>
+                                <div class="neo-tech-pill py-1 px-3" style="font-size: 0.75rem;">
+                                    <i class="bi bi-database text-info"></i> MySQL
+                                </div>
+                            </div>
+
+                            <div>
+                                <a href="https://github.com/emmanmanaga" target="_blank"
+                                    class="btn btn-success rounded-pill px-4 py-2 shadow-sm d-inline-flex align-items-center gap-2 fw-medium">
+                                    <i class="bi bi-github"></i> See Github Repository
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="container py-4 mt-5 border-top neo-footer">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-4">
+
+            <div class="d-flex align-items-center gap-3 text-center text-md-start">
+                <img src="logo.svg" alt="Logo" class="footer-logo">
+                <div>
+                    <h6 class="mb-0 fw-bold text-dark-custom lh-1" style="font-size: 0.75rem;">Polytechnic University of
+                        the Philippines</h6>
+                    <small class="text-muted tracking-wide" style="font-size: 0.6rem;">STO. TOMAS CAMPUS</small>
+                </div>
+            </div>
+
+            <div class="text-center text-md-end">
+                <small class="text-muted tracking-wide d-block fw-medium mb-2" style="font-size: 0.6rem;">&copy; 2026
+                    EMMANUEL MANAGA</small>
+
+                <div class=" d-flex justify-content-center justify-content-md-end gap-3">
+                    <a href="https://github.com/emmanmanaga" target="_blank" class="text-muted footer-icon"
+                        aria-label="GitHub"><i class="bi bi-github"></i></a>
+                    <a href="https://www.instagram.com/em.managa/" target="_blank" class="text-muted footer-icon"
+                        aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="mailto:emmanmng13@gmail.com" class="text-muted footer-icon" aria-label="Email"><i
+                            class="bi bi-envelope-fill"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const htmlElement = document.documentElement;
+
+        // 1. Sync the icon state immediately when the page loads
+        if (htmlElement.getAttribute('data-bs-theme') === 'dark') {
+            themeIcon.classList.replace('bi-moon-stars-fill', 'bi-sun-fill');
+        }
+
+        // 2. The Click Event
+        toggleBtn.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-bs-theme');
+            let newTheme;
+
+            if (currentTheme === 'dark') {
+                newTheme = 'light';
+                themeIcon.classList.replace('bi-sun-fill', 'bi-moon-stars-fill');
+            } else {
+                newTheme = 'dark';
+                themeIcon.classList.replace('bi-moon-stars-fill', 'bi-sun-fill');
+            }
+
+            // Apply to the page and save to browser memory
+            htmlElement.setAttribute('data-bs-theme', newTheme);
+            localStorage.setItem('portfolioTheme', newTheme);
+        });
+    </script>
+
+    <script>
+        const swiper = new Swiper('.project-swiper', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto', // Automatically calculates how many cards fit on screen
+            initialSlide: 2,
+            loop: false,
+            coverflowEffect: {
+                rotate: 10, // The tilt angle of the background cards
+                stretch: 50, // Distance between cards
+                depth: 300, // How far back the background cards are pushed
+                modifier: 1, // Multiplier for the above values
+                slideShadows: false, // Turned off default shadows because we are using your custom glassmorphic CSS shadows!
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+    </script>
+</body>
+
+</html>

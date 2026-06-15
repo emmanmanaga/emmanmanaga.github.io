@@ -1,0 +1,779 @@
+/* Animated Soft Pastel Green Mesh Gradient */
+body {
+    /* 1. The creamy, milky base color */
+    background-color: #f2f9f5;
+    font-family: 'Montserrat', sans-serif;
+
+    /* 2. The soft pastel green patches */
+    background-image:
+        radial-gradient(circle at 0% 0%, rgba(193, 230, 210, 0.7) 0%, transparent 50%),
+        radial-gradient(circle at 100% 100%, rgba(167, 219, 186, 0.5) 0%, transparent 50%),
+        radial-gradient(circle at 100% 0%, rgba(226, 245, 233, 0.8) 0%, transparent 50%),
+        radial-gradient(circle at 0% 100%, rgba(200, 235, 215, 0.6) 0%, transparent 50%);
+
+    /* 3. Make the background canvas larger so we have room to move it around */
+    background-size: 200% 200%;
+
+    /* 4. Trigger the animation (runs for 15 seconds, eases in and out smoothly, loops forever) */
+    animation: fluctuate 15s ease-in-out infinite alternate;
+
+    min-height: 100vh;
+}
+
+/* 5. The Animation Logic: Shifting the patches around */
+@keyframes fluctuate {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 100% 100%;
+    }
+
+    100% {
+        background-position: 0% 100%;
+    }
+}
+
+.tracking-wide {
+    letter-spacing: 0.2em;
+}
+
+/* --- Floating Pill Navigation (Glassmorphic + Neumorphic) --- */
+.custom-pill-nav {
+    background: rgba(255, 255, 255, 0.4);
+    /* Frosted glass base */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    /* Safari support */
+    border-radius: 50px;
+    /* The pill shape */
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    /* Subtle glowing edge */
+
+    /* Neumorphic soft shadows */
+    box-shadow:
+        8px 8px 16px rgba(167, 219, 186, 0.3),
+        -8px -8px 16px rgba(255, 255, 255, 0.4);
+
+    width: 100%;
+    max-width: 700px;
+    /* Prevents it from stretching too wide on big screens */
+}
+
+/* Link Styling */
+.custom-pill-nav .nav-link {
+    color: #2a724b;
+    transition: all 0.2s;
+}
+
+.custom-pill-nav .nav-link:hover,
+.custom-pill-nav .nav-link.active {
+    color: #149954;
+    text-shadow: 0 0 8px rgba(20, 153, 84, 0.3);
+}
+
+.custom-logo-img {
+    height: 32px;
+    width: auto;
+}
+
+/* --- Theme Toggle Button --- */
+.theme-toggle-btn {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 8px 8px 16px rgba(167, 219, 186, 0.3), -8px -8px 16px rgba(255, 255, 255, 0.4);
+
+    /* Perfect circle sizing */
+    width: 54px;
+    height: 54px;
+    color: #2a724b;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+    color: #149954;
+    transform: translateY(-2px);
+    /* Slight lift effect on hover */
+}
+
+/* --- Hero Section Styling --- */
+.perspective-wrapper {
+    perspective: 1000px;
+    /* Required for the 3D tilt effect */
+}
+
+.hero-glass-card {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 8px 8px 24px rgba(167, 219, 186, 0.3), -8px -8px 24px rgba(255, 255, 255, 0.9);
+    transform-style: preserve-3d;
+}
+
+/* Typography Colors & Gradients */
+.text-dark-custom {
+    color: #1a2b22;
+}
+
+.text-gradient {
+    background: linear-gradient(90deg, #2a724b, #149954);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Blinking Cursor for Typewriter */
+.cursor {
+    animation: blink 1s infinite;
+    color: #2a724b;
+    font-weight: 300;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* --- Hero Contact & Social Icons --- */
+.hero-social-icon {
+    font-size: 1.8rem;
+    /* Makes them large and easily clickable */
+    color: #2a724b;
+    transition: all 0.2s ease;
+    opacity: 0.8;
+}
+
+.hero-social-icon:hover {
+    color: #149954;
+    opacity: 1;
+    transform: translateY(-4px);
+    /* Slight lift on hover */
+    filter: drop-shadow(0 4px 8px rgba(20, 153, 84, 0.3));
+}
+
+/* Profile Image Frame */
+.profile-frame {
+    padding: 12px;
+    max-width: 400px;
+}
+
+/* --- Carousel & Profile Image Styling --- */
+
+/* 1. The wrapper handles the continuous floating */
+.floating-wrapper {
+    animation: floatProfile 4s ease-in-out infinite;
+    z-index: 1;
+}
+
+/* 2. The images handle the traced shadows and sizing */
+.profile-carousel-img {
+    width: 100%;
+    /* Force an aspect ratio so the carousel doesn't jump in height if your logo and photo are different sizes */
+    aspect-ratio: 2/3;
+    object-fit: contain;
+
+    /* Light mode traced shadow */
+    filter: drop-shadow(10px 10px 15px rgba(120, 190, 150, 0.6)) drop-shadow(-10px -10px 15px rgba(255, 255, 255, 1));
+}
+
+/* The Continuous Up & Down Animation */
+@keyframes floatProfile {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+        /* Moves up by 15 pixels */
+    }
+
+    100% {
+        transform: translateY(0px);
+        /* Returns to starting position */
+    }
+}
+
+/* --- Orbiting Skill Badges --- */
+
+.floating-badge {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    color: #2a724b;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    box-shadow: 4px 4px 16px rgba(167, 219, 186, 0.4);
+    z-index: 2;
+    /* Ensures they float on top of your photo */
+
+    /* The continuous floating animation */
+    animation: floatOrbit 5s ease-in-out infinite;
+}
+
+/* Specific Positions & Animation Delays around the Image */
+.badge-1 {
+    top: 15%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.badge-2 {
+    bottom: 20%;
+    right: 5%;
+    animation-delay: 1.5s;
+    /* Delays the start so they float out of sync */
+}
+
+.badge-3 {
+    top: 68%;
+    left: 2%;
+    animation-delay: 3s;
+}
+
+/* The subtle up/down keyframes for the badges */
+@keyframes floatOrbit {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* --- About Section & Neumorphic Pills --- */
+
+/* 1. Default Pill State (Raised) */
+.neo-pill {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(12px);
+    border-radius: 50px !important;
+    /* Forces the pill shape */
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    color: #2a724b;
+    font-weight: 500;
+    padding: 10px 24px;
+
+    /* Outward soft shadow */
+    box-shadow: 6px 6px 12px rgba(167, 219, 186, 0.3), -6px -6px 12px rgba(255, 255, 255, 0.9);
+    transition: all 0.2s ease;
+}
+
+.neo-pill:hover {
+    color: #149954;
+    transform: translateY(-1px);
+    /* Slight lift on hover before clicking */
+}
+
+/* 2. Active Pill State (Depressed/Pushed In) */
+.nav-pills .nav-link.active.neo-pill {
+    background: rgba(234, 242, 238, 0.5);
+    /* Slightly darker base to look indented */
+    color: #149954;
+    border: 1px solid transparent;
+    /* Remove glow border when pressed */
+
+    /* THE MAGIC: Inset shadows simulate a hole or indentation */
+    box-shadow: inset 4px 4px 8px rgba(167, 219, 186, 0.5), inset -4px -4px 8px rgba(255, 255, 255, 0.9);
+    transform: translateY(1px);
+    /* Physically moves the text down slightly */
+}
+
+/* 3. The Big Content Card */
+.neo-content-card {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(12px);
+    border-radius: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 10px 10px 30px rgba(167, 219, 186, 0.2), -10px -10px 30px rgba(255, 255, 255, 0.8);
+    min-height: 400px;
+}
+
+/* 4. Wireframe Placeholder Boxes (For layout testing) */
+.placeholder-box {
+    background: rgba(167, 219, 186, 0.15);
+    border-radius: 20px;
+    height: 200px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    /* Inset shadow to make them look like empty slots */
+    box-shadow: inset 4px 4px 8px rgba(167, 219, 186, 0.2), inset -4px -4px 8px rgba(255, 255, 255, 0.5);
+}
+
+/* --- Education Cards Styling --- */
+
+/* The Main Container */
+.neo-edu-card {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(12px);
+    border-radius: 24px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 6px 6px 16px rgba(167, 219, 186, 0.2), -6px -6px 16px rgba(255, 255, 255, 0.7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.neo-edu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 8px 8px 20px rgba(167, 219, 186, 0.3), -8px -8px 20px rgba(255, 255, 255, 0.9);
+}
+
+/* The List Items (Bullets) */
+.neo-list-item {
+    background: rgba(167, 219, 186, 0.1);
+    border: 1px solid rgba(167, 219, 186, 0.3);
+    border-radius: 50px;
+    padding: 10px 16px;
+    font-size: 0.8rem;
+    color: #2a724b;
+    font-weight: 500;
+    /* Soft inset shadow to make them look like tracks */
+    box-shadow: inset 2px 2px 5px rgba(167, 219, 186, 0.2), inset -2px -2px 5px rgba(255, 255, 255, 0.5);
+}
+
+/* The Pulsing Active Dot */
+.neo-active-badge {
+    background: rgba(20, 153, 84, 0.1);
+    padding: 6px 12px;
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #149954;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 0 0 rgba(20, 153, 84, 0.7);
+    animation: pulseActive 2s infinite;
+}
+
+@keyframes pulseActive {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(20, 153, 84, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 6px rgba(20, 153, 84, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(20, 153, 84, 0);
+    }
+}
+
+/* --- Tech Stack Cards & Pills --- */
+
+/* The circular background for the category icons */
+.tech-icon-wrapper {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(167, 219, 186, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Inset shadow gives it that 'pressed in' look */
+    box-shadow: inset 2px 2px 4px rgba(255, 255, 255, 0.6), inset -2px -2px 4px rgba(167, 219, 186, 0.2);
+}
+
+/* The individual technology pills */
+.neo-tech-pill {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #1a2b22;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    /* Soft outward shadow */
+    box-shadow: 4px 4px 10px rgba(167, 219, 186, 0.2), -4px -4px 10px rgba(255, 255, 255, 0.8);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.neo-tech-pill:hover {
+    transform: translateY(-2px);
+    /* A frosty, slightly deeper pastel green */
+    background: rgba(226, 242, 233, 0.9);
+    /* Gives the edge a subtle green glow instead of pure white */
+    border-color: rgba(167, 219, 186, 0.8);
+    box-shadow: 6px 6px 14px rgba(167, 219, 186, 0.4), -6px -6px 14px rgba(255, 255, 255, 1);
+}
+
+/* --- Interests Cards Styling --- */
+
+/* The Main Hover Card */
+.neo-interest-card {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    
+    /* Soft, pillowy outward shadow */
+    box-shadow: 8px 8px 24px rgba(167, 219, 186, 0.3), -8px -8px 24px rgba(255, 255, 255, 0.9);
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease;
+}
+
+.neo-interest-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 12px 12px 30px rgba(167, 219, 186, 0.4), -12px -12px 30px rgba(255, 255, 255, 1);
+}
+
+/* The deeply inset "stage" for the icon */
+.neo-icon-stage {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: rgba(234, 242, 238, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Strong inset shadow makes it look physically carved into the card */
+    box-shadow: inset 6px 6px 12px rgba(167, 219, 186, 0.6), inset -6px -6px 12px rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); /* Bouncy spring effect */
+}
+
+/* Make the icon pop out when the card is hovered */
+.neo-interest-card:hover .neo-icon-stage {
+    transform: scale(1.15); 
+}
+
+/* --- Footer Styling --- */
+.neo-footer {
+    /* Overrides standard grey border with a soft green transparent one */
+    border-color: rgba(42, 114, 75, 0.1) !important;
+}
+
+.footer-logo {
+    height: 35px;
+    width: auto;
+    opacity: 0.9;
+}
+
+/* Social Icon Hover Flair */
+.footer-icon {
+    font-size: 1.25rem;
+    transition: all 0.2s ease;
+}
+
+.footer-icon:hover {
+    color: #149954 !important;
+    transform: translateY(-3px);
+    /* Subtle lift */
+    text-shadow: 0 4px 8px rgba(20, 153, 84, 0.2);
+}
+
+
+/* --- Manual Dark Mode Overrides --- */
+/* Notice we changed this from @media to [data-bs-theme="dark"] */
+[data-bs-theme="dark"] body {
+    background-color: #0d1712;
+    background-image:
+        radial-gradient(circle at 0% 0%, rgba(42, 114, 75, 0.4) 0%, transparent 50%),
+        radial-gradient(circle at 100% 100%, rgba(20, 153, 84, 0.25) 0%, transparent 50%),
+        radial-gradient(circle at 100% 0%, rgba(5, 61, 30, 0.5) 0%, transparent 50%),
+        radial-gradient(circle at 0% 100%, rgba(31, 92, 58, 0.3) 0%, transparent 50%);
+}
+
+[data-bs-theme="dark"] .custom-pill-nav,
+[data-bs-theme="dark"] .theme-toggle-btn {
+    background: rgba(26, 29, 28, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.4), -8px -8px 16px rgba(255, 255, 255, 0.02);
+    color: #c1e6d2;
+}
+
+[data-bs-theme="dark"] .custom-pill-nav .nav-link {
+    color: #c1e6d2;
+}
+
+/* --- Dark Mode Overrides for Contact Block --- */
+[data-bs-theme="dark"] .hero-social-icon {
+    color: #a7dbba;
+}
+
+[data-bs-theme="dark"] .hero-social-icon:hover {
+    color: #c1e6d2;
+    filter: drop-shadow(0 4px 8px rgba(167, 219, 186, 0.3));
+}
+
+/* --- Dark Mode Overrides for Hero --- */
+[data-bs-theme="dark"] .hero-glass-card {
+    background: rgba(26, 29, 28, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 8px 8px 24px rgba(0, 0, 0, 0.4), -8px -8px 24px rgba(255, 255, 255, 0.02);
+}
+
+[data-bs-theme="dark"] .profile-carousel-img {
+    filter: drop-shadow(8px 8px 16px rgba(0, 0, 0, 0.6)) drop-shadow(-8px -8px 16px rgba(255, 255, 255, 0.05));
+}
+
+[data-bs-theme="dark"] .text-dark-custom {
+    color: #e2f5e9;
+}
+
+[data-bs-theme="dark"] .text-muted {
+    color: #a7dbba !important;
+}
+
+[data-bs-theme="dark"] .btn-outline-dark {
+    color: #e2f5e9;
+    border-color: #a7dbba;
+}
+
+[data-bs-theme="dark"] .btn-outline-dark:hover {
+    background: #a7dbba;
+    color: #0d1712;
+}
+
+/* --- Dark Mode Overrides for Orbit Badges --- */
+[data-bs-theme="dark"] .floating-badge {
+    background: rgba(26, 29, 28, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #c1e6d2;
+    box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Dark Mode Overrides for About Section --- */
+[data-bs-theme="dark"] .neo-pill {
+    background: rgba(26, 29, 28, 0.5);
+    border-color: rgba(255, 255, 255, 0.05);
+    color: #c1e6d2;
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.4), -6px -6px 12px rgba(255, 255, 255, 0.02);
+}
+
+[data-bs-theme="dark"] .nav-pills .nav-link.active.neo-pill {
+    background: rgba(13, 23, 18, 0.5);
+    color: #e2f5e9;
+    /* Dark mode inset shadows */
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.6), inset -4px -4px 8px rgba(255, 255, 255, 0.03);
+}
+
+[data-bs-theme="dark"] .neo-content-card {
+    background: rgba(26, 29, 28, 0.4);
+    border-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.4), -10px -10px 30px rgba(255, 255, 255, 0.02);
+}
+
+[data-bs-theme="dark"] .placeholder-box {
+    background: rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.02);
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.5), inset -4px -4px 8px rgba(255, 255, 255, 0.02);
+}
+
+/* --- Dark Mode Overrides for Education Cards --- */
+[data-bs-theme="dark"] .neo-edu-card {
+    background: rgba(26, 29, 28, 0.4);
+    border-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 6px 6px 16px rgba(0, 0, 0, 0.4), -6px -6px 16px rgba(255, 255, 255, 0.02);
+}
+
+[data-bs-theme="dark"] .neo-edu-card:hover {
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5), -8px -8px 20px rgba(255, 255, 255, 0.03);
+}
+
+[data-bs-theme="dark"] .neo-list-item {
+    background: rgba(13, 23, 18, 0.5);
+    border-color: rgba(255, 255, 255, 0.05);
+    color: #c1e6d2;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5), inset -2px -2px 5px rgba(255, 255, 255, 0.02);
+}
+
+[data-bs-theme="dark"] .neo-active-badge {
+    background: rgba(167, 219, 186, 0.1);
+    color: #a7dbba !important;
+    border-color: rgba(167, 219, 186, 0.3) !important;
+}
+
+[data-bs-theme="dark"] .pulse-dot {
+    background-color: #a7dbba;
+    animation: pulseActiveDark 2s infinite;
+}
+
+@keyframes pulseActiveDark {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(167, 219, 186, 0.4);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 6px rgba(167, 219, 186, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(167, 219, 186, 0);
+    }
+}
+
+/* --- Dark Mode Overrides for Tech Stack --- */
+
+[data-bs-theme="dark"] .tech-icon-wrapper {
+    background: rgba(20, 153, 84, 0.15);
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.4), inset -2px -2px 4px rgba(167, 219, 186, 0.05);
+}
+
+[data-bs-theme="dark"] .neo-tech-pill {
+    background: rgba(26, 29, 28, 0.6);
+    border-color: rgba(255, 255, 255, 0.05);
+    color: #e2f5e9;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4), -4px -4px 10px rgba(255, 255, 255, 0.02);
+}
+
+[data-bs-theme="dark"] .neo-tech-pill:hover {
+    background: rgba(42, 114, 75, 0.2);
+    box-shadow: 6px 6px 14px rgba(0, 0, 0, 0.5), -6px -6px 14px rgba(255, 255, 255, 0.03);
+}
+
+/* Ensure dark icons (like Github and Flask) turn white in dark mode */
+[data-bs-theme="dark"] .text-dark-custom {
+    color: #e2f5e9 !important;
+}
+
+/* --- Dark Mode Overrides for Interests --- */
+[data-bs-theme="dark"] .neo-interest-card {
+    background: rgba(26, 29, 28, 0.4);
+    border-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 8px 8px 24px rgba(0, 0, 0, 0.4), -8px -8px 24px rgba(255, 255, 255, 0.02);
+}
+
+[data-bs-theme="dark"] .neo-interest-card:hover {
+    box-shadow: 12px 12px 30px rgba(0, 0, 0, 0.5), -12px -12px 30px rgba(255, 255, 255, 0.03);
+}
+
+[data-bs-theme="dark"] .neo-icon-stage {
+    background: rgba(13, 23, 18, 0.6);
+    border-color: rgba(255, 255, 255, 0.02);
+    box-shadow: inset 6px 6px 12px rgba(0, 0, 0, 0.6), inset -6px -6px 12px rgba(255, 255, 255, 0.03);
+}
+
+/* --- Footer Dark Mode Overrides --- */
+[data-bs-theme="dark"] .neo-footer {
+    border-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+[data-bs-theme="dark"] .footer-icon:hover {
+    color: #a7dbba !important;
+    text-shadow: 0 4px 8px rgba(167, 219, 186, 0.2);
+}
+
+/* --- --------------------------- --- */
+/* --- ---------PROJECTS CSS------ --- */
+/* --- --------------------------- --- */
+/* --- Swiper 3D Coverflow Styling --- */
+
+.project-swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    /* Prevents the 3D rotated edges from getting cut off on mobile */
+    overflow: visible !important; 
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 320px; /* Fixed width for the cards */
+    height: 450px; /* Taller aspect ratio looks better in coverflow */
+    border-radius: 32px;
+    
+    /* The initial state for inactive cards in the background */
+    opacity: 0.9;
+    transition: opacity 0.4s ease;
+}
+
+/* The active, center card lights up */
+.swiper-slide-active {
+    opacity: 1;
+}
+
+.neo-glass-slide {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 8px 8px 24px rgba(167, 219, 186, 0.3), -8px -8px 24px rgba(255, 255, 255, 0.4);
+}
+
+/* The upper half of the card where an image or big icon goes */
+.slide-visual {
+    background: rgba(167, 219, 186, 0.15);
+    border-top-left-radius: 31px;
+    border-top-right-radius: 31px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Customizing the Swiper Pagination Dots to match your green theme */
+.swiper-pagination-bullet {
+    background: #2a724b;
+    opacity: 0.3;
+}
+.swiper-pagination-bullet-active {
+    background: #149954;
+    opacity: 1;
+}
+
+/* --- Modal Glassmorphism Styling --- */
+.neo-glass-modal {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    box-shadow: 10px 10px 40px rgba(167, 219, 186, 0.3), -10px -10px 40px rgba(255, 255, 255, 0.5);
+}
+
+/* --- Dark Mode Overrides for Swiper --- */
+[data-bs-theme="dark"] .neo-glass-slide {
+    background: rgba(26, 29, 28, 0.5);
+    border-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 8px 8px 24px rgba(0, 0, 0, 0.4), -8px -8px 24px rgba(255, 255, 255, 0.02);
+}
+
+[data-bs-theme="dark"] .slide-visual {
+    background: rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-bs-theme="dark"] .swiper-pagination-bullet { background: #a7dbba; }
+[data-bs-theme="dark"] .swiper-pagination-bullet-active { background: #c1e6d2; }
+
+/* Dark Mode Overrides for the Modal */
+[data-bs-theme="dark"] .neo-glass-modal {
+    background: rgba(26, 29, 28, 0.7);
+    border-color: rgba(255, 255, 255, 0.05) !important;
+    box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.6), -15px -15px 40px rgba(255, 255, 255, 0.02);
+}
+
+/* Make the close button visible in dark mode */
+[data-bs-theme="dark"] .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
