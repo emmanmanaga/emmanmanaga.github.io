@@ -23,7 +23,7 @@
     <div class="container mt-4 fixed-top d-flex justify-content-center align-items-center gap-3 z-3">
 
         <nav class="navbar navbar-expand-lg custom-pill-nav px-4 py-2">
-            <a class="navbar-brand d-flex align-items-center" href="#about">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
                 <img src="logo.svg" alt="Emmanuel Logo" class="custom-logo-img">
             </a>
 
@@ -37,8 +37,8 @@
                                 class="bi bi-house-door"></i> About</a></li>
                     <li class="nav-item"><a class="nav-link active d-flex align-items-center gap-2"
                             href="projects.html"><i class="bi bi-code-slash"></i> Projects</a></li>
-                    <li class="nav-item"><a class="nav-link d-flex align-items-center gap-2" href="#contact"><i
-                                class="bi bi-telephone"></i> Contact</a></li>
+                    <li class="nav-item"><a class="nav-link d-flex align-items-center gap-2" href="experience.html"><i
+                                class="bi bi-award-fill"></i> Experience</a></li>
                 </ul>
             </div>
         </nav>
@@ -59,14 +59,15 @@
             <h2 class="display-4 fw-bold text-dark-custom mt-0">Projects</h2>
 
             <p class="lead text-muted mx-auto" style="max-width: 600px;">
-                A showcase of things I've built and of which I became a part to expand my knowledge.
+                A showcase of things I've built and of which I became a part to expand my knowledge and expertise.
             </p>
         </div>
 
         <div class="swiper project-swiper mt-1 mb-5 pb-5">
             <div class="swiper-wrapper">
 
-                <div class="swiper-slide neo-glass-slide d-flex flex-column">
+                <div class="swiper-slide neo-glass-slide d-flex flex-column" style="cursor: pointer;"
+                    data-bs-toggle="modal" data-bs-target="#projectModal5">
                     <div class="slide-visual flex-grow-1">
                         <img src="Figma.png" alt="Nokia UI/UX Design Preview" class="w-100 h-100 object-fit-cover"
                             style="border-top-left-radius: 31px; border-top-right-radius: 31px;">
@@ -79,7 +80,8 @@
                     </div>
                 </div>
 
-                <div class="swiper-slide neo-glass-slide d-flex flex-column">
+                <div class="swiper-slide neo-glass-slide d-flex flex-column" style="cursor: pointer;"
+                    data-bs-toggle="modal" data-bs-target="#projectModal3">
                     <div class="slide-visual flex-grow-1">
                         <img src="SmartBoundary.png" alt="SmartBoundary Preview" class="w-100 h-100 object-fit-cover"
                             style="border-top-left-radius: 31px; border-top-right-radius: 31px;">
@@ -91,7 +93,8 @@
                     </div>
                 </div>
 
-                <div class="swiper-slide neo-glass-slide d-flex flex-column">
+                <div class="swiper-slide neo-glass-slide d-flex flex-column" style="cursor: pointer;"
+                    data-bs-toggle="modal" data-bs-target="#projectModal2">
                     <div class="slide-visual flex-grow-1">
                         <img src="SagipQ.png" alt="SagipQ Preview" class="w-100 h-100 object-fit-cover"
                             style="border-top-left-radius: 31px; border-top-right-radius: 31px;">
@@ -104,7 +107,8 @@
                     </div>
                 </div>
 
-                <div class="swiper-slide neo-glass-slide d-flex flex-column" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#projectModal1">
+                <div class="swiper-slide neo-glass-slide d-flex flex-column" style="cursor: pointer;"
+                    data-bs-toggle="modal" data-bs-target="#projectModal1">
                     <div class="slide-visual flex-grow-1">
                         <img src="CyberSphere.png" alt="CyberSphere Preview" class="w-100 h-100 object-fit-cover"
                             style="border-top-left-radius: 31px; border-top-right-radius: 31px;">
@@ -117,7 +121,8 @@
                     </div>
                 </div>
 
-                <div class="swiper-slide neo-glass-slide d-flex flex-column">
+                <div class="swiper-slide neo-glass-slide d-flex flex-column" style="cursor: pointer;"
+                    data-bs-toggle="modal" data-bs-target="#projectModal4">
                     <div class="slide-visual flex-grow-1">
                         <img src="Cathedread.png" alt="Cathedread Preview" class="w-100 h-100 object-fit-cover"
                             style="border-top-left-radius: 31px; border-top-right-radius: 31px;">
@@ -136,6 +141,236 @@
         </div>
     </section>
 
+    <div class="modal fade" id="projectModal5" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content neo-glass-modal border-0" style="border-radius: 32px;">
+                <div class="modal-body p-4 p-md-5 position-relative">
+
+                    <button type="button" class="btn-close position-absolute top-0 end-0 m-4 z-3"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+
+                    <div class="row g-4 h-100">
+
+                        <div class="col-lg-7 d-flex flex-column">
+                            <div class="flex-grow-1 mb-3 position-relative" style="min-height: 350px;">
+
+                                <div id="projectCarousel5" class="carousel slide h-100" data-bs-ride="carousel"
+                                    data-bs-interval="3000">
+
+                                    <div class="carousel-indicators">
+                                        <button type="button" data-bs-target="#projectCarousel5" data-bs-slide-to="0"
+                                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                                        <button type="button" data-bs-target="#projectCarousel5" data-bs-slide-to="1"
+                                            aria-label="Slide 2"></button>
+                                        <button type="button" data-bs-target="#projectCarousel5" data-bs-slide-to="2"
+                                            aria-label="Slide 3"></button>
+                                        <button type="button" data-bs-target="#projectCarousel5" data-bs-slide-to="3"
+                                            aria-label="Slide 4"></button>
+                                    </div>
+
+                                    <div class="carousel-inner shadow-sm border border-white border-opacity-25"
+                                        style="border-radius: 24px; overflow: hidden; width: 100%; aspect-ratio: 16 / 9;">
+
+                                        <div class="carousel-item active h-100">
+                                            <img src="Frame-1.png" class="d-block w-100 h-100 object-fit-cover"
+                                                alt="Portfolio Hero Desktop View">
+                                        </div>
+                                        <div class="carousel-item h-100">
+                                            <img src="Frame-2.png" class="d-block w-100 h-100 object-fit-cover"
+                                                alt="Portfolio Hero Mobile View">
+                                        </div>
+                                        <div class="carousel-item h-100">
+                                            <img src="Frame-3.png" class="d-block w-100 h-100 object-fit-cover"
+                                                alt="Calling Card Front">
+                                        </div>
+                                        <div class="carousel-item h-100">
+                                            <img src="Frame-4.png" class="d-block w-100 h-100 object-fit-cover"
+                                                alt="Calling Card Back">
+                                        </div>
+
+                                    </div>
+
+                                    <button class="carousel-control-prev" type="button"
+                                        data-bs-target="#projectCarousel5" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button"
+                                        data-bs-target="#projectCarousel5" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+
+                                </div>
+                            </div>
+                            <small class="text-muted tracking-wide" style="font-size: 0.75rem;"></small>
+                        </div>
+                        <div class="col-lg-5 d-flex flex-column justify-content-center py-2">
+                            <span class="text-success fw-bold small text-uppercase tracking-wide mb-1">UI/Ux
+                                Design and Prototype</span>
+                            <h2 class="display-6 fw-bold text-dark-custom mb-1">Various Figma Design</h2>
+                            <span class="text-muted fw-medium mb-4 d-block small">Frontend Designer</span>
+
+                            <p class="text-muted mb-4 small lh-lg">
+                                A curated collection of user-centered website interfaces
+                                designed in Figma, transforming abstract ideas into clean, functional, and visually
+                                consistent UI/UX prototypes.
+                            </p>
+
+                            <div class="d-flex align-items-center flex-wrap gap-2 mb-5">
+                                <span class="text-dark-custom fw-bold small me-2">Tech Stack:</span>
+                                <div class="neo-tech-pill py-1 px-3" style="font-size: 0.75rem;">
+                                    <i class="bi bi-palette text-danger"></i> Figma
+                                </div>
+                            </div>
+
+                            <div>
+                                <a href="https://www.figma.com/proto/iZqZTzizAvLcPi2tNOvIgJ/Managa--Emmanuel-B.?t=xqYOVXHjzGK3ypCn-1"
+                                    target="_blank"
+                                    class="btn btn-success rounded-pill px-4 py-2 shadow-sm d-inline-flex align-items-center gap-2 fw-medium">
+                                    <i class="bi bi-palette text-danger" style="color: white !important;"></i> See Nokia
+                                    Web Prototype
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+
+    <div class="modal fade" id="projectModal3" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content neo-glass-modal border-0" style="border-radius: 32px;">
+                <div class="modal-body p-4 p-md-5 position-relative">
+
+                    <button type="button" class="btn-close position-absolute top-0 end-0 m-4 z-3"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+
+                    <div class="row g-4 h-100">
+                        <div class="col-lg-7 d-flex flex-column">
+                            <div class="flex-grow-1 mb-3" style="min-height: 350px;">
+                                <video src="SmartBoundary.mp4" autoplay loop muted playsinline
+                                    class="w-100 h-100 object-fit-cover" style="border-radius: 24px;"></video>
+                            </div>
+                            <small class="text-muted tracking-wide" style="font-size: 0.75rem;">
+                            </small>
+                        </div>
+
+                        <div class="col-lg-5 d-flex flex-column justify-content-center py-2">
+                            <span class="text-success fw-bold small text-uppercase tracking-wide mb-1">Web
+                                Development</span>
+                            <h2 class="display-6 fw-bold text-dark-custom mb-1">SmartBoundary</h2>
+                            <span class="text-muted fw-medium mb-4 d-block small">Full-Stack Developer</span>
+
+                            <p class="text-muted mb-4 small lh-lg">
+                                A PHP-based remittance and fleet ecosystem featuring
+                                object-oriented driver classes and secure session logging.
+                            </p>
+
+                            <div class="d-flex align-items-center flex-wrap gap-2 mb-5">
+                                <span class="text-dark-custom fw-bold small me-2">Tech Stack:</span>
+                                <div class="neo-tech-pill py-1 px-3" style="font-size: 0.75rem;">
+                                    <i class="bi bi-filetype-html text-danger"></i> HTML
+                                </div>
+                                <div class="neo-tech-pill py-1 px-3" style="font-size: 0.75rem;">
+                                    <i class="bi bi-filetype-css text-primary"></i> CSS
+                                </div>
+                                <div class="neo-tech-pill py-1 px-3" style="font-size: 0.75rem;">
+                                    <i class="bi bi-filetype-js text-warning"></i> JavaScript
+                                </div>
+                                <div class="neo-tech-pill py-1 px-3" style="font-size: 0.75rem;">
+                                    <i class="bi bi-filetype-php text-primary"></i> PHP
+                                </div>
+                            </div>
+
+                            <div>
+                                <a href="#" target="_blank"
+                                    class="btn btn-success disabled rounded-pill px-4 py-2 shadow-sm d-inline-flex align-items-center gap-2 fw-medium"
+                                    tabindex="-1" aria-disabled="true">
+                                    <i class="bi bi-github"></i> Github Repository Will Be Available Soon
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="projectModal2" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content neo-glass-modal border-0" style="border-radius: 32px;">
+                <div class="modal-body p-4 p-md-5 position-relative">
+
+                    <button type="button" class="btn-close position-absolute top-0 end-0 m-4 z-3"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+
+                    <div class="row g-4 h-100">
+                        <div class="col-lg-7 d-flex flex-column">
+                            <div class="flex-grow-1 mb-3" style="min-height: 350px;">
+                                <video src="SagipQ.mp4" autoplay loop muted playsinline
+                                    class="w-100 h-100 object-fit-cover" style="border-radius: 24px;"></video>
+                            </div>
+                            <small class="text-muted tracking-wide" style="font-size: 0.75rem;">
+                                Credits: Mabalot, Marck Jedrick | Pineda, Christine | Recaña, Khyle | Tolentino, Mara
+                            </small>
+                        </div>
+
+                        <div class="col-lg-5 d-flex flex-column justify-content-center py-2">
+                            <span class="text-success fw-bold small text-uppercase tracking-wide mb-1">Web
+                                Development</span>
+                            <h2 class="display-6 fw-bold text-dark-custom mb-1">SagipQ</h2>
+                            <span class="text-muted fw-medium mb-4 d-block small">Backend Developer</span>
+
+                            <p class="text-muted mb-4 small lh-lg">
+                                An AI-assisted hackathon solution bridging citizens and
+                                authorities through a user-centered platform to efficiently report, monitor, and assist
+                                at-risk community members.
+                            </p>
+
+                            <div class="d-flex align-items-center flex-wrap gap-2 mb-5">
+                                <span class="text-dark-custom fw-bold small me-2">Tech Stack:</span>
+                                <div class="neo-tech-pill py-1 px-3" style="font-size: 0.75rem;">
+                                    <i class="bi bi-filetype-html text-danger"></i> HTML
+                                </div>
+                                <div class="neo-tech-pill py-1 px-3" style="font-size: 0.75rem;">
+                                    <i class="bi bi-filetype-css text-primary"></i> CSS
+                                </div>
+                                <div class="neo-tech-pill py-1 px-3" style="font-size: 0.75rem;">
+                                    <i class="bi bi-filetype-js text-warning"></i> JavaScript
+                                </div>
+                                <div class="neo-tech-pill py-1 px-3" style="font-size: 0.75rem;">
+                                    <i class="bi bi-filetype-py text-primary"></i> Python
+                                </div>
+                                <div class="neo-tech-pill py-1 px-3" style="font-size: 0.75rem;">
+                                    <i class="bi bi-lightning-charge-fill" style="color: #05998b;"></i> FastAPI
+                                </div>
+                                <div class="neo-tech-pill py-1 px-3" style="font-size: 0.75rem;">
+                                    <i class="bi bi-database text-info"></i> SQLite
+                                </div>
+                                <div class="neo-tech-pill py-1 px-3" style="font-size: 0.75rem;">
+                                    <i class="bi bi-person-bounding-box" style="color: #6f42c1;"></i> InsightFace
+                                </div>
+                            </div>
+
+                            <div>
+                                <a href="#" target="_blank"
+                                    class="btn btn-success disabled rounded-pill px-4 py-2 shadow-sm d-inline-flex align-items-center gap-2 fw-medium"
+                                    tabindex="-1" aria-disabled="true">
+                                    <i class="bi bi-github"></i> Github Repository Will Be Available Soon
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="modal fade" id="projectModal1" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content neo-glass-modal border-0" style="border-radius: 32px;">
@@ -147,19 +382,20 @@
                     <div class="row g-4 h-100">
                         <div class="col-lg-7 d-flex flex-column">
                             <div class="flex-grow-1 mb-3" style="min-height: 350px;">
-                                <img src="placeholder.jpg" alt="Project Preview" class="w-100 h-100 object-fit-cover"
-                                    style="border-radius: 24px;">
+                                <video src="CyberSphere.mp4" autoplay loop muted playsinline
+                                    class="w-100 h-100 object-fit-cover" style="border-radius: 24px;"></video>
                             </div>
                             <small class="text-muted tracking-wide" style="font-size: 0.75rem;">
-                                Credits: Emmanuel Managa, Team Member 2
+                                Credits: Fukuhara, Yoshinobu | Limutos, Gerald | Mabalot, Marck Jedrick | Saavedra,
+                                Francis
                             </small>
                         </div>
 
                         <div class="col-lg-5 d-flex flex-column justify-content-center py-2">
                             <span class="text-success fw-bold small text-uppercase tracking-wide mb-1">Web
-                                Ecosystem</span>
+                                Development</span>
                             <h2 class="display-6 fw-bold text-dark-custom mb-1">CyberSphere</h2>
-                            <span class="text-muted fw-medium mb-4 d-block small">Lead Backend Developer</span>
+                            <span class="text-muted fw-medium mb-4 d-block small">Lead Database Architect</span>
 
                             <p class="text-muted mb-4 small lh-lg">
                                 A comprehensive PHP and MySQL ecosystem centralizing professional networking, real-time
@@ -167,9 +403,18 @@
                             </p>
 
                             <div class="d-flex align-items-center flex-wrap gap-2 mb-5">
-                                <span class="text-dark-custom fw-bold small me-2">Languages:</span>
+                                <span class="text-dark-custom fw-bold small me-2">Tech Stack:</span>
                                 <div class="neo-tech-pill py-1 px-3" style="font-size: 0.75rem;">
                                     <i class="bi bi-filetype-php text-primary"></i> PHP
+                                </div>
+                                <div class="neo-tech-pill py-1 px-3" style="font-size: 0.75rem;">
+                                    <i class="bi bi-filetype-html text-danger"></i> HTML
+                                </div>
+                                <div class="neo-tech-pill py-1 px-3" style="font-size: 0.75rem;">
+                                    <i class="bi bi-filetype-css text-primary"></i> CSS
+                                </div>
+                                <div class="neo-tech-pill py-1 px-3" style="font-size: 0.75rem;">
+                                    <i class="bi bi-filetype-js text-warning"></i> JavaScript
                                 </div>
                                 <div class="neo-tech-pill py-1 px-3" style="font-size: 0.75rem;">
                                     <i class="bi bi-database text-info"></i> MySQL
@@ -177,9 +422,66 @@
                             </div>
 
                             <div>
-                                <a href="https://github.com/emmanmanaga" target="_blank"
+                                <a href="https://github.com/Yosh-Fukuhara/project" target="_blank"
                                     class="btn btn-success rounded-pill px-4 py-2 shadow-sm d-inline-flex align-items-center gap-2 fw-medium">
                                     <i class="bi bi-github"></i> See Github Repository
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="projectModal4" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content neo-glass-modal border-0" style="border-radius: 32px;">
+                <div class="modal-body p-4 p-md-5 position-relative">
+
+                    <button type="button" class="btn-close position-absolute top-0 end-0 m-4 z-3"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+
+                    <div class="row g-4 h-100">
+                        <div class="col-lg-7 d-flex flex-column">
+                            <div class="flex-grow-1 mb-3" style="min-height: 350px;">
+                                <video src="Cathedread.mp4" autoplay loop muted playsinline
+                                    class="w-100 h-100 object-fit-cover" style="border-radius: 24px;"></video>
+                            </div>
+                            <small class="text-muted tracking-wide" style="font-size: 0.75rem;">
+                                Credits: Fukuhara, Yoshinobu | Limutos, Gerald | Mabalot, Marck Jedrick | Saavedra,
+                                Francis
+                            </small>
+                        </div>
+
+                        <div class="col-lg-5 d-flex flex-column justify-content-center py-2">
+                            <span class="text-success fw-bold small text-uppercase tracking-wide mb-1">Game
+                                Development</span>
+                            <h2 class="display-6 fw-bold text-dark-custom mb-1">Cathedread</h2>
+                            <span class="text-muted fw-medium mb-4 d-block small">Backend Developer</span>
+
+                            <p class="text-muted mb-4 small lh-lg">
+                                An immersive interactive experience utilizing Pygame to deliver
+                                3D-like raycasted graphics, complete with responsive player inputs, custom physics, and
+                                synchronized audio integration.
+                            </p>
+
+                            <div class="d-flex align-items-center flex-wrap gap-2 mb-5">
+                                <span class="text-dark-custom fw-bold small me-2">Tech Stack:</span>
+                                <div class="neo-tech-pill py-1 px-3" style="font-size: 0.75rem;">
+                                    <i class="bi bi-filetype-py text-primary"></i> Python
+                                </div>
+                                <div class="neo-tech-pill py-1 px-3" style="font-size: 0.75rem;">
+                                    <i class="bi bi-controller" style="color: #ffc107;"></i> Pygame
+                                </div>
+                            </div>
+
+                            <div>
+                                <a href="#" target="_blank"
+                                    class="btn btn-success disabled rounded-pill px-4 py-2 shadow-sm d-inline-flex align-items-center gap-2 fw-medium"
+                                    tabindex="-1" aria-disabled="true">
+                                    <i class="bi bi-github"></i> Github Repository Will Be Available Soon
                                 </a>
                             </div>
                         </div>
