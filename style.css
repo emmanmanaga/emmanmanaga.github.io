@@ -1,38 +1,51 @@
-/* Animated Soft Pastel Green Mesh Gradient */
+/* --- Base Body (Static) --- */
 body {
-    /* 1. The creamy, milky base color */
+    /* 1. The creamy, milky base color stays on the body */
     background-color: #f2f9f5;
     font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden; /* Keeps our scrollbar fix! */
+    position: relative; /* Required to stack the background behind it */
+}
+
+/* --- The GPU-Accelerated Background Canvas --- */
+body::before {
+    content: "";
+    position: fixed;
+    top: -30%;
+    left: -30%;
+    width: 160vw;
+    height: 160vh;
+    z-index: -1;
 
     /* 2. The soft pastel green patches */
     background-image:
-        radial-gradient(circle at 0% 0%, rgba(193, 230, 210, 0.7) 0%, transparent 50%),
-        radial-gradient(circle at 100% 100%, rgba(167, 219, 186, 0.5) 0%, transparent 50%),
-        radial-gradient(circle at 100% 0%, rgba(226, 245, 233, 0.8) 0%, transparent 50%),
-        radial-gradient(circle at 0% 100%, rgba(200, 235, 215, 0.6) 0%, transparent 50%);
+        radial-gradient(circle at 0% 0%, rgba(167, 219, 186, 0.9) 0%, transparent 60%),
+        radial-gradient(circle at 100% 100%, rgba(120, 190, 150, 0.8) 0%, transparent 60%),
+        radial-gradient(circle at 100% 0%, rgba(200, 235, 215, 0.95) 0%, transparent 60%),
+        radial-gradient(circle at 0% 100%, rgba(145, 212, 175, 0.85) 0%, transparent 60%);
+    
+    background-size: 100% 100%;
 
-    /* 3. Make the background canvas larger so we have room to move it around */
-    background-size: 200% 200%;
-
-    /* 4. Trigger the animation (runs for 15 seconds, eases in and out smoothly, loops forever) */
-    animation: fluctuate 15s ease-in-out infinite alternate;
-
-    min-height: 100vh;
-    overflow-x: hidden;
+    /* 3. The new hardware-accelerated animation */
+    animation: fluctuateGPU 15s ease-in-out infinite alternate;
+    
+    /* Tells the browser's graphics card to prepare for this exact math */
+    will-change: transform;
 }
 
-/* 5. The Animation Logic: Shifting the patches around */
-@keyframes fluctuate {
+/* 4. The Animation Logic: Translating instead of Repainting */
+@keyframes fluctuateGPU {
     0% {
-        background-position: 0% 0%;
+        /* translate3d forces the GPU to take over the math */
+        transform: translate3d(0, 0, 0) rotate(0deg);
     }
-
     50% {
-        background-position: 100% 100%;
+        /* Larger movement, deeper rotation, and a zoom-in breathing effect */
+        transform: translate3d(10%, 15%, 0) rotate(5deg) scale(1.15);
     }
-
     100% {
-        background-position: 0% 100%;
+        transform: translate3d(-5%, -5%, 0) rotate(-2deg);
     }
 }
 
@@ -494,14 +507,18 @@ body {
 
 
 /* --- Manual Dark Mode Overrides --- */
-/* Notice we changed this from @media to [data-bs-theme="dark"] */
+/* --- Manual Dark Mode Overrides --- */
 [data-bs-theme="dark"] body {
     background-color: #0d1712;
+}
+
+[data-bs-theme="dark"] body::before {
+    /* Boosted the dark green opacities and matched the 60% spread */
     background-image:
-        radial-gradient(circle at 0% 0%, rgba(42, 114, 75, 0.4) 0%, transparent 50%),
-        radial-gradient(circle at 100% 100%, rgba(20, 153, 84, 0.25) 0%, transparent 50%),
-        radial-gradient(circle at 100% 0%, rgba(5, 61, 30, 0.5) 0%, transparent 50%),
-        radial-gradient(circle at 0% 100%, rgba(31, 92, 58, 0.3) 0%, transparent 50%);
+        radial-gradient(circle at 0% 0%, rgba(42, 114, 75, 0.7) 0%, transparent 60%),
+        radial-gradient(circle at 100% 100%, rgba(20, 153, 84, 0.5) 0%, transparent 60%),
+        radial-gradient(circle at 100% 0%, rgba(5, 61, 30, 0.8) 0%, transparent 60%),
+        radial-gradient(circle at 0% 100%, rgba(31, 92, 58, 0.6) 0%, transparent 60%);
 }
 
 [data-bs-theme="dark"] .custom-pill-nav,
