@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Projects | Emmanuel Managa</title>
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        const savedTheme = localStorage.getItem('portfolioTheme') || 'light';
+        document.documentElement.setAttribute('data-bs-theme', savedTheme);
+    </script>
+</head>
+
+<body>
+    <div class="container mt-4 fixed-top d-flex justify-content-center align-items-center gap-3 z-3">
+
+        <nav class="navbar navbar-expand-lg custom-pill-nav px-4 py-2">
+            <a class="navbar-brand d-flex align-items-center" href="#about">
+                <img src="logo.svg" alt="Emmanuel Logo" class="custom-logo-img">
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-3 fw-medium">
+                    <li class="nav-item"><a class="nav-link d-flex align-items-center gap-2" href="index.html"><i
+                                class="bi bi-house-door"></i> About</a></li>
+                    <li class="nav-item"><a class="nav-link active d-flex align-items-center gap-2"
+                            href="projects.html"><i class="bi bi-code-slash"></i> Projects</a></li>
+                    <li class="nav-item"><a class="nav-link d-flex align-items-center gap-2" href="#contact"><i
+                                class="bi bi-telephone"></i> Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <button id="theme-toggle" class="btn theme-toggle-btn d-flex justify-content-center align-items-center"
+            aria-label="Toggle Theme">
+            <i class="bi bi-moon-stars-fill" id="theme-icon"></i>
+        </button>
+
+    </div>
+
+    <footer class="container py-4 mt-5 border-top neo-footer">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-4">
+
+            <div class="d-flex align-items-center gap-3 text-center text-md-start">
+                <img src="logo.svg" alt="Logo" class="footer-logo">
+                <div>
+                    <h6 class="mb-0 fw-bold text-dark-custom lh-1" style="font-size: 0.75rem;">Polytechnic University of
+                        the Philippines</h6>
+                    <small class="text-muted tracking-wide" style="font-size: 0.6rem;">STO. TOMAS CAMPUS</small>
+                </div>
+            </div>
+
+            <div class="text-center text-md-end">
+                <small class="text-muted tracking-wide d-block fw-medium mb-2" style="font-size: 0.6rem;">&copy; 2026
+                    EMMANUEL MANAGA</small>
+
+                <div class=" d-flex justify-content-center justify-content-md-end gap-3">
+                    <a href="https://github.com/emmanmanaga" target="_blank" class="text-muted footer-icon"
+                        aria-label="GitHub"><i class="bi bi-github"></i></a>
+                    <a href="https://www.instagram.com/em.managa/" target="_blank" class="text-muted footer-icon"
+                        aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="mailto:emmanmng13@gmail.com" class="text-muted footer-icon" aria-label="Email"><i
+                            class="bi bi-envelope-fill"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const htmlElement = document.documentElement;
+
+        // 1. Sync the icon state immediately when the page loads
+        if (htmlElement.getAttribute('data-bs-theme') === 'dark') {
+            themeIcon.classList.replace('bi-moon-stars-fill', 'bi-sun-fill');
+        }
+
+        // 2. The Click Event
+        toggleBtn.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-bs-theme');
+            let newTheme;
+
+            if (currentTheme === 'dark') {
+                newTheme = 'light';
+                themeIcon.classList.replace('bi-sun-fill', 'bi-moon-stars-fill');
+            } else {
+                newTheme = 'dark';
+                themeIcon.classList.replace('bi-moon-stars-fill', 'bi-sun-fill');
+            }
+
+            // Apply to the page and save to browser memory
+            htmlElement.setAttribute('data-bs-theme', newTheme);
+            localStorage.setItem('portfolioTheme', newTheme);
+        });
+    </script>
