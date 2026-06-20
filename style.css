@@ -795,3 +795,15 @@ body::before {
 [data-bs-theme="dark"] .btn-close {
     filter: invert(1) grayscale(100%) brightness(200%);
 }
+
+/* --- --------------------------- --- */
+/* --- ------ACHIEVEMENTS CSS----- --- */
+/* --- --------------------------- --- */
+
+.transition-hover {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.transition-hover:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1) !important;
+}
