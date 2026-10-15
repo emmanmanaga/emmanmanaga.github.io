@@ -61,6 +61,14 @@
             <p class="lead text-muted mx-auto" style="max-width: 600px;">
                 A showcase of things I've built and of which I became a part to expand my knowledge and expertise.
             </p>
+
+            <div class="d-flex justify-content-center flex-wrap gap-2 mt-3" role="group"
+                aria-label="Filter projects">
+                <button type="button" class="btn btn-success rounded-pill px-4 py-2" data-project-filter="all"
+                    aria-pressed="true">All Projects</button>
+                <button type="button" class="btn btn-outline-success rounded-pill px-4 py-2"
+                    data-project-filter="web-development" aria-pressed="false">Web Development</button>
+            </div>
         </div>
 
         <div class="swiper project-swiper mt-1 mb-5 pb-5">
@@ -132,6 +140,37 @@
                         <p class="text-muted small mb-0">An immersive interactive experience utilizing Pygame to deliver
                             3D-like raycasted graphics, complete with responsive player inputs, custom physics, and
                             synchronized audio integration.</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide neo-glass-slide d-flex flex-column d-none" style="cursor: pointer;"
+                    data-project-category="web-development" data-bs-toggle="modal" data-bs-target="#projectModal6">
+                    <div class="slide-visual flex-grow-1 d-flex align-items-center p-4">
+                        <div class="container-fluid" aria-hidden="true">
+                            <div class="row g-2">
+                                <div class="col-8">
+                                    <div class="rounded-4 bg-success text-white p-3 h-100 d-flex flex-column justify-content-end"
+                                        style="min-height: 145px;">
+                                        <span class="small fw-medium">A01</span>
+                                        <span class="fw-bold fs-4">Bento<br>Layout</span>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="rounded-4 bg-success-subtle h-100" style="min-height: 145px;"></div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="rounded-4 bg-success-subtle" style="height: 90px;"></div>
+                                </div>
+                                <div class="col-8">
+                                    <div class="rounded-4 bg-dark-subtle" style="height: 90px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-content text-center p-4">
+                        <h4 class="fw-bold text-dark-custom mb-2">A01: Bento Layout</h4>
+                        <p class="text-muted small mb-0">Learn responsive layouting with Bootstrap's row and column
+                            classes.</p>
                     </div>
                 </div>
 
@@ -238,6 +277,32 @@
             </div>
         </div>
     </div> 
+
+    <div class="modal fade" id="projectModal6" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content neo-glass-modal border-0" style="border-radius: 32px;">
+                <div class="modal-body p-4 p-md-5 position-relative">
+                    <button type="button" class="btn-close position-absolute top-0 end-0 m-4 z-3"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+
+                    <div class="pe-4">
+                        <span class="text-success fw-bold small text-uppercase tracking-wide mb-2 d-block">
+                            Web Development
+                        </span>
+                        <h2 class="display-6 fw-bold text-dark-custom mb-3">A01: Bento Layout</h2>
+                        <p class="text-muted mb-4 lh-lg">
+                            Learn responsive layouting with Bootstrap's row and column classes.
+                        </p>
+                        <a href="https://emmanmanaga.github.io/Web-Development/A01/bento-layout.html" target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn btn-success rounded-pill px-4 py-2 shadow-sm d-inline-flex align-items-center gap-2 fw-medium">
+                            <i class="bi bi-box-arrow-up-right"></i> View Live Project
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <div class="modal fade" id="projectModal3" tabindex="-1" aria-hidden="true">
@@ -574,6 +639,32 @@
                 el: '.swiper-pagination',
                 clickable: true,
             },
+        });
+
+        const projectFilterButtons = document.querySelectorAll('[data-project-filter]');
+        const projectSlides = Array.from(swiper.wrapperEl.children);
+
+        projectFilterButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                const filter = button.dataset.projectFilter;
+
+                projectFilterButtons.forEach((filterButton) => {
+                    const isActive = filterButton === button;
+                    filterButton.classList.toggle('btn-success', isActive);
+                    filterButton.classList.toggle('btn-outline-success', !isActive);
+                    filterButton.setAttribute('aria-pressed', String(isActive));
+                });
+
+                const visibleSlides = projectSlides.filter((slide) =>
+                    filter === 'all'
+                        ? slide.dataset.projectCategory !== 'web-development'
+                        : slide.dataset.projectCategory === filter);
+                visibleSlides.forEach((slide) => slide.classList.remove('d-none'));
+                swiper.wrapperEl.replaceChildren(...visibleSlides);
+
+                swiper.update();
+                swiper.slideTo(0, 0);
+            });
         });
     </script>
 </body>
